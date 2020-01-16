@@ -1,0 +1,222 @@
+dateModified: 1578425964
+email:
+  fromEmail: dennis@thedennis.se
+  fromName: Kulpåhjul
+  transportType: craft\mail\transportadapters\Sendmail
+fieldGroups:
+  db30b70a-551d-4f8d-96cc-c79e4a9434ff:
+    name: Common
+fields:
+  7fdb3c33-9f18-4ea8-8c4f-83ab8a34f4ef:
+    name: Artikel
+    handle: article
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Matrix
+    settings:
+      minBlocks: ''
+      maxBlocks: ''
+      contentTable: '{{%matrixcontent_article}}'
+      propagationMethod: all
+    contentColumnType: string
+    fieldGroup: db30b70a-551d-4f8d-96cc-c79e4a9434ff
+matrixBlockTypes:
+  1fa4406c-292b-4f26-9f91-872b3eebe9b3:
+    field: 7fdb3c33-9f18-4ea8-8c4f-83ab8a34f4ef
+    name: Rubrik
+    handle: articleheading
+    sortOrder: 1
+    fields:
+      b418a217-a5ab-42e5-86a2-fd2a17c4f00b:
+        name: Rubrik
+        handle: articleheading
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: '55'
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      10f190cd-b10a-4996-bb87-ca538a50418b:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              b418a217-a5ab-42e5-86a2-fd2a17c4f00b:
+                required: false
+                sortOrder: 1
+  2fcd6035-274e-4aeb-9d6e-3778b0dd6947:
+    field: 7fdb3c33-9f18-4ea8-8c4f-83ab8a34f4ef
+    name: Text
+    handle: text
+    sortOrder: 2
+    fields:
+      523a2207-34dc-4810-8f8b-f6f1bbe6cbb6:
+        name: Text
+        handle: text
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\redactor\Field
+        settings:
+          redactorConfig: Standard.json
+          purifierConfig: ''
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
+          purifyHtml: '1'
+          columnType: text
+          availableVolumes: '*'
+          availableTransforms: '*'
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      b2eeb9c3-7aff-437f-8c17-3d070c2a5d88:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              523a2207-34dc-4810-8f8b-f6f1bbe6cbb6:
+                required: false
+                sortOrder: 1
+  7004460f-2a4c-46d0-bfe2-175426607e33:
+    field: 7fdb3c33-9f18-4ea8-8c4f-83ab8a34f4ef
+    name: Bild
+    handle: image
+    sortOrder: 3
+    fields:
+      276da8a1-6b89-40eb-97e2-cea4d05c9a28:
+        name: Bildtext
+        handle: caption
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\redactor\Field
+        settings:
+          redactorConfig: Simple.json
+          purifierConfig: ''
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
+          purifyHtml: '1'
+          columnType: text
+          availableVolumes: '*'
+          availableTransforms: '*'
+        contentColumnType: text
+        fieldGroup: null
+      e0cb9c60-8d30-4f58-a040-a387f3e4797c:
+        name: Bild
+        handle: image
+        instructions: ''
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: ''
+          defaultUploadLocationSource: ''
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: ''
+          singleUploadLocationSubpath: ''
+          restrictFiles: ''
+          allowedKinds: null
+          sources: '*'
+          source: null
+          targetSiteId: null
+          viewMode: list
+          limit: ''
+          selectionLabel: ''
+          localizeRelations: false
+          validateRelatedElements: ''
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      92a66e01-c96d-4c1e-9d27-b794cba623bf:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              276da8a1-6b89-40eb-97e2-cea4d05c9a28:
+                required: false
+                sortOrder: 2
+              e0cb9c60-8d30-4f58-a040-a387f3e4797c:
+                required: false
+                sortOrder: 1
+plugins:
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+sections:
+  60d907e4-125d-498c-896c-0c6c7ca59209:
+    name: Nyheter
+    handle: news
+    type: channel
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      99558882-32e1-4a42-86dc-c848386c9b67:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: 'nyheter/{slug}'
+        template: ''
+    entryTypes:
+      2de68f6e-61a4-434b-aec7-e713244e21b5:
+        name: Nyheter
+        handle: news
+        hasTitleField: true
+        titleLabel: Rubrik
+        titleFormat: ''
+        sortOrder: 1
+        fieldLayouts:
+          377b6497-e75e-4daf-8021-742d66767cd6:
+            tabs:
+              -
+                name: Common
+                sortOrder: 1
+                fields:
+                  7fdb3c33-9f18-4ea8-8c4f-83ab8a34f4ef:
+                    required: false
+                    sortOrder: 1
+siteGroups:
+  f7dc448f-8757-48c3-9055-4696c1263647:
+    name: Kulpåhjul
+sites:
+  99558882-32e1-4a42-86dc-c848386c9b67:
+    baseUrl: $DEFAULT_SITE_URL
+    handle: default
+    hasUrls: true
+    language: sv
+    name: Kulpåhjul
+    primary: true
+    siteGroup: f7dc448f-8757-48c3-9055-4696c1263647
+    sortOrder: 1
+system:
+  edition: solo
+  name: Kulpåhjul
+  live: true
+  schemaVersion: 3.3.3
+  timeZone: Europe/Stockholm
+users:
+  requireEmailVerification: true
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoVolumeUid: null
+  photoSubpath: ''

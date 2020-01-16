@@ -1,0 +1,29 @@
+{
+  "name": "kulpahjul",
+  "version": "1.0.0",
+  "description": "",
+  "main": "/src/js/main.js",
+  "dependencies": {
+    "laravel-mix": "^5.0.1",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "npm run development -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fogelhaus/Kulpahjul.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fogelhaus/Kulpahjul/issues"
+  },
+  "homepage": "https://github.com/Fogelhaus/Kulpahjul#readme"
+}

@@ -18,6 +18,8 @@
  * set to the value `2012`.
  */
 
-return [
+//  Routing all Craft Requests through index.  For Vue
 
+return [
+    '(?!api\/).*' => 'index'
 ];
