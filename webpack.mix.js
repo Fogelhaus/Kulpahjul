@@ -10,12 +10,21 @@ let mix = require('laravel-mix');
  | file for your application, as well as bundling up your JS files.
  |
  */
-mix.setPublicPath('public')
-.js('src/js/main.js', 'js/')
-.sass('src/sass/app.scss', 'css/')
 
-// Nedanstående rad kanske ska tas bort?
-// mix.js('src/app.js', 'dist/').sass('src/app.scss', 'dist/');
+// version does not work in hmr mode
+if (process.env.npm_lifecycle_event !== 'hot') {
+    mix.version()
+  }
+  const path = require('path');
+  // fix css files 404 issue
+  mix.webpackConfig({
+    devServer: {
+      contentBase: path.resolve(__dirname, 'public'),
+    }
+  });
+  mix.setPublicPath('public')
+  .js('src/js/main.js', 'js/')
+  .sass('src/sass/app.scss', 'css/')
 
 // Full API
 // mix.js(src, output);
