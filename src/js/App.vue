@@ -1,17 +1,27 @@
 <template>
 	  <div id="app">
-	    <h1>{{ welcomeMessage }}</h1>
+          
+          <siteHeader></siteHeader>
+          <div>
+              <router-view> </router-view>
+            </div>
+          <siteFooter></siteFooter>
+
+
 	  </div>
 	</template>
 	
 	<script>
+ 	import siteHeader from './components/Header/SiteHeader'
+	import siteFooter from './components/SiteFooter'
+
 	export default {
 	  name: 'app',
-	  data () {
-	    return {
-	      welcomeMessage: 'Hello World'
-	    }
-	  }
+	 components: { siteHeader, siteFooter},
 	}
 	</script>
+
+	<style lang="scss">
+	@import "../../node_modules/bootstrap/scss/bootstrap";
+	</style>
 	

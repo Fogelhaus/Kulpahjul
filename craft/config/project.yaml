@@ -1,4 +1,4 @@
-dateModified: 1578425964
+dateModified: 1580897847
 email:
   fromEmail: dennis@thedennis.se
   fromName: Kulpåhjul
@@ -164,7 +164,41 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.3.0
+  element-api:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
 sections:
+  46d21f4f-6ce4-466c-8bf1-cbc48ec1c5b9:
+    name: Home
+    handle: home
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      99558882-32e1-4a42-86dc-c848386c9b67:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: home
+        template: ''
+    entryTypes:
+      09a5bf55-5af0-46dc-8ab6-b2545acf5397:
+        name: Home
+        handle: home
+        hasTitleField: false
+        titleLabel: ''
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
+        fieldLayouts:
+          1cc094df-0514-42ed-9a10-49dd296f9013:
+            tabs:
+              -
+                name: Common
+                sortOrder: 1
+                fields:
+                  7fdb3c33-9f18-4ea8-8c4f-83ab8a34f4ef:
+                    required: false
+                    sortOrder: 1
   60d907e4-125d-498c-896c-0c6c7ca59209:
     name: Nyheter
     handle: news
