@@ -1,4 +1,4 @@
-dateModified: 1580897847
+dateModified: 1581081347
 email:
   fromEmail: dennis@thedennis.se
   fromName: Kulpåhjul
@@ -7,6 +7,66 @@ fieldGroups:
   db30b70a-551d-4f8d-96cc-c79e4a9434ff:
     name: Common
 fields:
+  05f6c67b-31b9-4d97-8334-4bcd23a22e60:
+    name: Butiksunderrubrik
+    handle: storeSubheader
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: '99'
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: db30b70a-551d-4f8d-96cc-c79e4a9434ff
+  3705e30d-7828-4185-93f5-6f6ddb45fe0a:
+    name: 'Utvald bild'
+    handle: featuredImage
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: ''
+      defaultUploadLocationSource: ''
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: ''
+      singleUploadLocationSubpath: ''
+      restrictFiles: ''
+      allowedKinds: null
+      sources: '*'
+      source: null
+      targetSiteId: null
+      viewMode: list
+      limit: ''
+      selectionLabel: ''
+      localizeRelations: false
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: db30b70a-551d-4f8d-96cc-c79e4a9434ff
+  75bd9281-05f4-470f-8f33-8cfcc706e05e:
+    name: Rubrik
+    handle: heading
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: '66'
+      columnType: text
+    contentColumnType: text
+    fieldGroup: db30b70a-551d-4f8d-96cc-c79e4a9434ff
   7fdb3c33-9f18-4ea8-8c4f-83ab8a34f4ef:
     name: Artikel
     handle: article
@@ -21,6 +81,66 @@ fields:
       contentTable: '{{%matrixcontent_article}}'
       propagationMethod: all
     contentColumnType: string
+    fieldGroup: db30b70a-551d-4f8d-96cc-c79e4a9434ff
+  cf91f24e-202e-4366-8b14-27c939320775:
+    name: Butiksrubrik
+    handle: storeHeader
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: '66'
+      columnType: text
+    contentColumnType: text
+    fieldGroup: db30b70a-551d-4f8d-96cc-c79e4a9434ff
+  d661cefd-d6ce-4746-9ea7-baab9bc90a32:
+    name: Butiksbanner
+    handle: storeBanner
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: ''
+      defaultUploadLocationSource: ''
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: ''
+      singleUploadLocationSubpath: ''
+      restrictFiles: ''
+      allowedKinds: null
+      sources: '*'
+      source: null
+      targetSiteId: null
+      viewMode: list
+      limit: ''
+      selectionLabel: ''
+      localizeRelations: false
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: db30b70a-551d-4f8d-96cc-c79e4a9434ff
+  e9bb6956-6186-4577-a009-1ae19d433f69:
+    name: Underrubrik
+    handle: subheading
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: '99'
+      columnType: text
+    contentColumnType: text
     fieldGroup: db30b70a-551d-4f8d-96cc-c79e4a9434ff
 matrixBlockTypes:
   1fa4406c-292b-4f26-9f91-872b3eebe9b3:
@@ -196,9 +316,27 @@ sections:
                 name: Common
                 sortOrder: 1
                 fields:
-                  7fdb3c33-9f18-4ea8-8c4f-83ab8a34f4ef:
+                  05f6c67b-31b9-4d97-8334-4bcd23a22e60:
+                    required: false
+                    sortOrder: 6
+                  3705e30d-7828-4185-93f5-6f6ddb45fe0a:
+                    required: false
+                    sortOrder: 3
+                  75bd9281-05f4-470f-8f33-8cfcc706e05e:
                     required: false
                     sortOrder: 1
+                  7fdb3c33-9f18-4ea8-8c4f-83ab8a34f4ef:
+                    required: false
+                    sortOrder: 4
+                  cf91f24e-202e-4366-8b14-27c939320775:
+                    required: false
+                    sortOrder: 5
+                  d661cefd-d6ce-4746-9ea7-baab9bc90a32:
+                    required: false
+                    sortOrder: 7
+                  e9bb6956-6186-4577-a009-1ae19d433f69:
+                    required: false
+                    sortOrder: 2
   60d907e4-125d-498c-896c-0c6c7ca59209:
     name: Nyheter
     handle: news
