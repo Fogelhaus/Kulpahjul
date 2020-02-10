@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="bg-primary">
+    <div class="bg-white">
       <h2>Om Kulpåhjul</h2>
       <div class="row ">
         <div class="col-sm">
@@ -18,7 +18,7 @@
           </p>
         </div>
         <div class="col-sm">
-          <img class src="https://www.fillmurray.com/300/300" alt />
+          <img class src="https://www.fillmurray.com/300/400" alt />
         </div>
       </div>
     </div>
