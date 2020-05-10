@@ -21,5 +21,5 @@
 //  Routing all Craft Requests through index.  For Vue
 
 return [
-    '(?!api\/).*' => 'index'
+    '<url:(?!api\b)\b\w+>' => ['template' => 'index'],
 ];

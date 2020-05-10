@@ -5,11 +5,13 @@
   "main": "/src/js/main.js",
   "dependencies": {
     "@popperjs/core": "^2.0.5",
+    "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "cross-env": "^6.0.3",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.0",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-youtube": "^1.4.0"
   },
   "devDependencies": {
     "laravel-mix": "^5.0.1",

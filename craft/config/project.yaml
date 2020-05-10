@@ -1,9 +1,16 @@
-dateModified: 1581081347
+assets:
+  tempVolumeUid: dbdc7aaf-6e88-41b5-99d6-ba73e7e1dec3
+  tempSubpath: temp
+dateModified: 1589051797
 email:
   fromEmail: dennis@thedennis.se
   fromName: Kulpåhjul
   transportType: craft\mail\transportadapters\Sendmail
 fieldGroups:
+  495e4cdc-43bb-4b7f-817c-fa4611f99baf:
+    name: kontaktuppgifter
+  8481ba27-8a09-4060-9f1c-04502e6108f4:
+    name: Social
   db30b70a-551d-4f8d-96cc-c79e4a9434ff:
     name: Common
 fields:
@@ -24,6 +31,39 @@ fields:
       columnType: text
     contentColumnType: text
     fieldGroup: db30b70a-551d-4f8d-96cc-c79e4a9434ff
+  27d0d503-8e6b-4345-9276-2b57bc1c2c40:
+    name: Kontaktinfo
+    handle: contactInfo
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Table
+    settings:
+      addRowLabel: 'Lägg till en rad'
+      maxRows: ''
+      minRows: ''
+      columns:
+        col1:
+          heading: Telefon
+          handle: telephone
+          width: ''
+          type: singleline
+        col3:
+          heading: E-post
+          handle: email
+          width: ''
+          type: email
+      defaults:
+        -
+          col1: ''
+          col3: ''
+        -
+          col1: ''
+          col3: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: db30b70a-551d-4f8d-96cc-c79e4a9434ff
   3705e30d-7828-4185-93f5-6f6ddb45fe0a:
     name: 'Utvald bild'
     handle: featuredImage
@@ -34,22 +74,48 @@ fields:
     type: craft\fields\Assets
     settings:
       useSingleFolder: ''
-      defaultUploadLocationSource: ''
+      defaultUploadLocationSource: 'volume:dbdc7aaf-6e88-41b5-99d6-ba73e7e1dec3'
       defaultUploadLocationSubpath: ''
-      singleUploadLocationSource: ''
+      singleUploadLocationSource: 'volume:dbdc7aaf-6e88-41b5-99d6-ba73e7e1dec3'
       singleUploadLocationSubpath: ''
       restrictFiles: ''
       allowedKinds: null
       sources: '*'
       source: null
       targetSiteId: null
-      viewMode: list
-      limit: ''
+      viewMode: large
+      limit: '1'
       selectionLabel: ''
       localizeRelations: false
       validateRelatedElements: ''
     contentColumnType: string
     fieldGroup: db30b70a-551d-4f8d-96cc-c79e4a9434ff
+  3a6c74ee-e2bf-450b-8853-823180861167:
+    name: Instagram
+    handle: instagram
+    instructions: 'Länk till instagramkonto'
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Url
+    settings:
+      placeholder: ''
+      maxLength: '255'
+    contentColumnType: string(255)
+    fieldGroup: 8481ba27-8a09-4060-9f1c-04502e6108f4
+  5b6c857c-c827-4280-8358-bea41e544a90:
+    name: 'Youtube huvudkanal'
+    handle: youtubeMain
+    instructions: 'Huvudkanalen på Youtube'
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Url
+    settings:
+      placeholder: ''
+      maxLength: '255'
+    contentColumnType: string(255)
+    fieldGroup: 8481ba27-8a09-4060-9f1c-04502e6108f4
   75bd9281-05f4-470f-8f33-8cfcc706e05e:
     name: Rubrik
     handle: heading
@@ -67,6 +133,23 @@ fields:
       columnType: text
     contentColumnType: text
     fieldGroup: db30b70a-551d-4f8d-96cc-c79e4a9434ff
+  7fc5c128-ffca-4549-b5a2-22d22c115c18:
+    name: Telefonnummer
+    handle: phone
+    instructions: 'Skriv ett telefonnummer som kan synas utåt på sajten.'
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: '20'
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 495e4cdc-43bb-4b7f-817c-fa4611f99baf
   7fdb3c33-9f18-4ea8-8c4f-83ab8a34f4ef:
     name: Artikel
     handle: article
@@ -82,6 +165,44 @@ fields:
       propagationMethod: all
     contentColumnType: string
     fieldGroup: db30b70a-551d-4f8d-96cc-c79e4a9434ff
+  a7d2a6cc-98f2-4671-912b-5f19a6604e8c:
+    name: Snapchat
+    handle: snapchat
+    instructions: 'Länk till snapchat.'
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Url
+    settings:
+      placeholder: ''
+      maxLength: '255'
+    contentColumnType: string(255)
+    fieldGroup: 8481ba27-8a09-4060-9f1c-04502e6108f4
+  b64d4bea-cfac-4716-bc59-d38d5f1877f8:
+    name: 'Youtube Bonuskanal'
+    handle: youtubeBonus
+    instructions: 'Länka till bonuskanalen.'
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Url
+    settings:
+      placeholder: ''
+      maxLength: '255'
+    contentColumnType: string(255)
+    fieldGroup: 8481ba27-8a09-4060-9f1c-04502e6108f4
+  bfd4ca26-ce9a-4679-abc2-70d3c450584c:
+    name: E-post
+    handle: email
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Email
+    settings:
+      placeholder: ''
+    contentColumnType: string
+    fieldGroup: 495e4cdc-43bb-4b7f-817c-fa4611f99baf
   cf91f24e-202e-4366-8b14-27c939320775:
     name: Butiksrubrik
     handle: storeHeader
@@ -125,6 +246,19 @@ fields:
       validateRelatedElements: ''
     contentColumnType: string
     fieldGroup: db30b70a-551d-4f8d-96cc-c79e4a9434ff
+  e2522d62-f3b8-4f40-87fc-d4a4e55fc372:
+    name: Facebook
+    handle: facebook
+    instructions: 'Länk till facebooksida'
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Url
+    settings:
+      placeholder: ''
+      maxLength: '255'
+    contentColumnType: string(255)
+    fieldGroup: 8481ba27-8a09-4060-9f1c-04502e6108f4
   e9bb6956-6186-4577-a009-1ae19d433f69:
     name: Underrubrik
     handle: subheading
@@ -142,6 +276,45 @@ fields:
       columnType: text
     contentColumnType: text
     fieldGroup: db30b70a-551d-4f8d-96cc-c79e4a9434ff
+globalSets:
+  56c71917-3025-4ef2-91ca-637f451ef420:
+    name: kulpåhjul
+    handle: kulpahjul
+    fieldLayouts:
+      006b9334-49cb-42ac-913d-5894066046c3:
+        tabs:
+          -
+            name: Allmänt
+            sortOrder: 1
+            fields:
+              3705e30d-7828-4185-93f5-6f6ddb45fe0a:
+                required: false
+                sortOrder: 1
+              7fc5c128-ffca-4549-b5a2-22d22c115c18:
+                required: false
+                sortOrder: 3
+              bfd4ca26-ce9a-4679-abc2-70d3c450584c:
+                required: false
+                sortOrder: 2
+          -
+            name: Social
+            sortOrder: 2
+            fields:
+              3a6c74ee-e2bf-450b-8853-823180861167:
+                required: false
+                sortOrder: 2
+              5b6c857c-c827-4280-8358-bea41e544a90:
+                required: false
+                sortOrder: 5
+              a7d2a6cc-98f2-4671-912b-5f19a6604e8c:
+                required: false
+                sortOrder: 3
+              b64d4bea-cfac-4716-bc59-d38d5f1877f8:
+                required: false
+                sortOrder: 4
+              e2522d62-f3b8-4f40-87fc-d4a4e55fc372:
+                required: false
+                sortOrder: 1
 matrixBlockTypes:
   1fa4406c-292b-4f26-9f91-872b3eebe9b3:
     field: 7fdb3c33-9f18-4ea8-8c4f-83ab8a34f4ef
@@ -178,8 +351,8 @@ matrixBlockTypes:
                 sortOrder: 1
   2fcd6035-274e-4aeb-9d6e-3778b0dd6947:
     field: 7fdb3c33-9f18-4ea8-8c4f-83ab8a34f4ef
-    name: Text
-    handle: text
+    name: Artikeltext
+    handle: articleBody
     sortOrder: 2
     fields:
       523a2207-34dc-4810-8f8b-f6f1bbe6cbb6:
@@ -250,9 +423,9 @@ matrixBlockTypes:
         type: craft\fields\Assets
         settings:
           useSingleFolder: ''
-          defaultUploadLocationSource: ''
+          defaultUploadLocationSource: 'volume:dbdc7aaf-6e88-41b5-99d6-ba73e7e1dec3'
           defaultUploadLocationSubpath: ''
-          singleUploadLocationSource: ''
+          singleUploadLocationSource: 'volume:dbdc7aaf-6e88-41b5-99d6-ba73e7e1dec3'
           singleUploadLocationSubpath: ''
           restrictFiles: ''
           allowedKinds: null
@@ -366,7 +539,52 @@ sections:
                 fields:
                   7fdb3c33-9f18-4ea8-8c4f-83ab8a34f4ef:
                     required: false
+                    sortOrder: 2
+                  e9bb6956-6186-4577-a009-1ae19d433f69:
+                    required: false
                     sortOrder: 1
+  bc8ae07c-6e5e-4c39-90ab-bf99e57b4a80:
+    name: Kontakt
+    handle: contact
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      99558882-32e1-4a42-86dc-c848386c9b67:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: kontakt
+        template: ''
+    entryTypes:
+      41b650d6-bca9-47d4-8ab7-b52725a1ab9f:
+        name: Kontakt
+        handle: contact
+        hasTitleField: false
+        titleLabel: ''
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
+        fieldLayouts:
+          89c7493c-171b-4be6-87ab-2aa83cb302db:
+            tabs:
+              -
+                name: Common
+                sortOrder: 1
+                fields:
+                  27d0d503-8e6b-4345-9276-2b57bc1c2c40:
+                    required: false
+                    sortOrder: 3
+                  3705e30d-7828-4185-93f5-6f6ddb45fe0a:
+                    required: false
+                    sortOrder: 5
+                  75bd9281-05f4-470f-8f33-8cfcc706e05e:
+                    required: false
+                    sortOrder: 1
+                  7fdb3c33-9f18-4ea8-8c4f-83ab8a34f4ef:
+                    required: false
+                    sortOrder: 4
+                  e9bb6956-6186-4577-a009-1ae19d433f69:
+                    required: false
+                    sortOrder: 2
 siteGroups:
   f7dc448f-8757-48c3-9055-4696c1263647:
     name: Kulpåhjul
@@ -392,3 +610,13 @@ users:
   defaultGroup: null
   photoVolumeUid: null
   photoSubpath: ''
+volumes:
+  dbdc7aaf-6e88-41b5-99d6-ba73e7e1dec3:
+    name: Bilder
+    handle: images
+    type: craft\volumes\Local
+    hasUrls: true
+    url: '@web/assets/bilder'
+    settings:
+      path: '@webroot/assets/bilder'
+    sortOrder: 1

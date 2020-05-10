@@ -4,8 +4,10 @@ import VueRouter from 'vue-router'
 import { routes } from './routes'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import VueYoutube from 'vue-youtube'
 
-Vue.use(VueRouter)
+Vue.use(VueRouter),
+Vue.use(VueYoutube)
         
 const router = new VueRouter({
 mode: 'history',

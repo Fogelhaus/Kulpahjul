@@ -1,24 +1,22 @@
 <template>
-  <div class="container">
-    <div class="bg-white">
-      <h2>Om Kulpåhjul</h2>
-      <div class="row ">
-        <div class="col-sm">
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore beatae qui, nostrum minima
-            voluptas dolorum! At repellat nisi expedita excepturi aspernatur amet libero porro commodi id esse a nulla,
-            laudantium quasi suscipit tenetur blanditiis velit inventore, dolorum nesciunt, minima nemo?
-          </p>
-        </div>
-        <div class="col-sm ">
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore beatae qui, nostrum minima
-            voluptas dolorum! At repellat nisi expedita excepturi aspernatur amet libero porro commodi id esse a nulla,
-            laudantium quasi suscipit tenetur blanditiis velit inventore, dolorum nesciunt, minima nemo?
-          </p>
-        </div>
-        <div class="col-sm">
-          <img class src="https://www.fillmurray.com/300/400" alt />
+  <div class="bg-danger">
+    <div class="container">
+      <div class="py-4">
+        <h2>Om Kulpåhjul</h2>
+        <div class="row">
+             <div class="col-md">
+            <!-- <newsList></newsList> --> 
+            <div v-for="text in homeData[0].body">
+              <div class="font-weight-bold" v-html="text.articleHeading"></div>
+              <div v-html="text.text"></div>
+            </div>
+          </div>
+          <div class="col-md" v-html=" homeData[0].body[1].text">
+             
+          </div>
+          <div class="col-md">
+            <img class="w-100 img-fluid"  v-bind:src="homeData[0].featuredImage" alt />
+          </div>
         </div>
       </div>
     </div>
@@ -27,7 +25,28 @@
 
 
 <script>
+// import newsList from "../News/NewsList";
 export default {
-  name: "socialArea"
+  name: "aboutArea",
+  components: { 
+    // newsList 
+    },
+  data() {
+    return {
+      homeData: []
+    };
+  },
+  mounted() {
+    this.getEntries();
+  },
+  methods: {
+    getEntries() {
+      const axios = require("axios");
+      let vm = this;
+      axios.get(`/api/home.json`).then(response => {
+        this.homeData = response.data.data;
+      });
+    }
+  }
 };
 </script>
