@@ -6,6 +6,8 @@
 	return [
 	    'endpoints' => [
 
+		// GLOBALS ENDPOINT
+	
 			'api/globals.json' =>
 				[
 			  'elementType' => GlobalSet::Class,
@@ -24,9 +26,49 @@
 				  ];
 			  },
 			],
-					  
-				
-			  
+
+			
+	// HOME ENDPOINT
+	'api/home.json' => function() {
+		return [
+			'elementType' => Entry::class,
+			'elementsPerPage' => 300,
+			'criteria' => [
+				'section' => 'home',
+			],
+			'transformer' => function(Entry $entry) {
+
+				$bodyBlocks = [];
+				foreach($entry->getFieldValue('article')->all() as $block){
+switch ($block->type->handle) {
+	case 'articleBody':
+		$bodyBlocks[] = [
+			'text' => $block->text->getParsedContent(),
+		];
+	break;
+		case 'articleheading':
+			$bodyBlocks[] = [
+				'articleHeading' => $block->articleheading,
+			];
+			break;
+}
+}
+				return [
+					'title' => $entry->title,
+					'slug' => $entry->slug,
+					'id' => (int) $entry->id,
+					'subheading' => $entry->subheading,
+					'storeHeader' => $entry->storeHeader,
+					'storeSubheader' => $entry->storeSubheader,
+					'body' => $bodyBlocks,
+					'featuredImage' =>  $entry->featuredImage->one()->getUrl()
+
+					
+				];
+			},
+		];
+	},
+// END HOME ENDPOINT
 
 	// NEWS ENDPOINT
 	        'api/news.json' => function() {
@@ -59,58 +101,6 @@
 	// END NEWS ENDPOINT
 
 
-	// HOME ENDPOINT
-			'api/home.json' => function() {
-				// \Craft::$app->response->headers->set('Access-Control-Allow-Origin', 'http://example.com');
-	            // HeaderHelper::setHeader([
-	            //     'Access-Control-Allow-Origin' => '*'
-	            // ]);
-				
-	            return [
-	                'elementType' => Entry::class,
-	                'elementsPerPage' => 300,
-	                'criteria' => [
-	                    'section' => 'home',
-	                    
-	                ],
-	                'transformer' => function(Entry $entry) {
-	                    // foreach ($entry->newsCategory as $category) {
-	                    //     $categoryTitle = $category->title;
-						// }
-						$bodyBlocks = [];
-						foreach($entry->getFieldValue('article')->all() as $block){
-        switch ($block->type->handle) {
-            case 'articleBody':
-                $bodyBlocks[] = [
-                    'text' => $block->text->getParsedContent(),
-				];
-			break;
-				case 'articleheading':
-					$bodyBlocks[] = [
-						'articleHeading' => $block->articleheading,
-					];
-					break;
-                
-
-                
-        }
-    }
-	                    return [
-							'title' => $entry->title,
-							'slug' => $entry->slug,
-	                        'id' => (int) $entry->id,
-							'subheading' => $entry->subheading,
-							'storeHeader' => $entry->storeHeader,
-							'storeSubheader' => $entry->storeSubheader,
-							'body' => $bodyBlocks,
-							'featuredImage' =>  $entry->featuredImage->one()->getUrl()
-
-							
-	                    ];
-	                },
-	            ];
-			},
-		// END HOME ENDPOINT
 
 		// CONTACT ENDPOINT
 			'api/contact.json' => function() {
@@ -155,7 +145,7 @@
 							'subheading' => $entry->subheading,
 							'contactInfo' => $entry->contactInfo,
 							'body' => $bodyBlocks,
-							
+							'featuredImage' =>  $entry->featuredImage->one()->getUrl()
 
 							
 	                    ];

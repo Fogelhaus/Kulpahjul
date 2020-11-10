@@ -13,12 +13,13 @@ export default {
   name: "videoArea",
   data() {
     return {
-      videoId: "PfqVvdBJ_e0"
+      videoId: "PfqVvdBJ_e0",
+      
     };
   },
   methods: {
     playVideo() {
-      this.player.playVideo();
+      this.$refs.youtube.player.playVideo();
     },
 
     playing() {
@@ -31,8 +32,14 @@ export default {
     }
   },
   props: {
-    fitParent: true
-
+    fitParent: true,
+    playerVars: {
+    type: Object,
+    default: function () {
+      return { autoplay: 1, controls: 0 }
+    }
+  }
+    
   }
 };
 </script>

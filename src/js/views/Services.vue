@@ -1,7 +1,7 @@
 <template>
   <div class>
-    <div class="card text-white border-0">
-      <img class="card-img w-100 h-auto" src="https://www.fillmurray.com/1900/700" alt />
+    <div class="card text-white border-0 ">
+      <img class="card-img mh-75vh w-100 h-auto" src="https://www.fillmurray.com/1900/600" alt />
 
       <div class="card-img-overlay d-flex align-items-end container">
         <div class="w-50 mb-3">
